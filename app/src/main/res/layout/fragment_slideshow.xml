@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_slideshow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
+
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/text_slideshow">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/img_cakea"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_red_dark" />
+            <LinearLayout
+                android:id="@+id/detailitem1"
+                android:orientation="vertical"
+                android:layout_width="230dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="match_parent">
+                <TextView
+
+                    android:id="@+id/name_cake1"
+                    android:text="The Ultimate Decadent Chocolate-and-Cream Layer Cake"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/cake1_price1"
+                    android:text="100.000d"
+                    android:textSize="15dp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/cake1_price2"
+                    android:text="110.000d"
+                    android:textSize="14dp"
+                    android:textStyle="italic"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/X1_del"
+                android:layout_width="wrap_content"
+                android:textSize="25dp"
+                android:text="X"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/img_cupcakea"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_red_dark" />
+            <LinearLayout
+                android:id="@+id/detailitem2"
+                android:orientation="vertical"
+                android:layout_width="230dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="match_parent">
+                <TextView
+
+                    android:id="@+id/name_cupcake1"
+                    android:text="The Best Vanilla Buttercream Frosting - Belle of the Kitchen"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/cupcake1_price1"
+                    android:text="80.000d"
+                    android:textSize="15dp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/cupcake1_price2"
+                    android:text="100.000d"
+                    android:textSize="14dp"
+                    android:textStyle="italic"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/X2_del"
+                android:layout_width="wrap_content"
+                android:textSize="25dp"
+                android:text="X"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/img_dougnuta"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_red_dark" />
+            <LinearLayout
+                android:id="@+id/detailitem3"
+                android:orientation="vertical"
+                android:layout_width="230dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="match_parent">
+                <TextView
+
+                    android:id="@+id/name_dougnut1"
+                    android:text="Dougnuts Chocolate"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/dougnut1_price1"
+                    android:text="15.000d"
+                    android:textSize="15dp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/dougnut1_price2"
+                    android:text="25.000d"
+                    android:textSize="14dp"
+                    android:textStyle="italic"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/X3_del"
+                android:layout_width="wrap_content"
+                android:textSize="25dp"
+                android:text="X"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/sub_total"
+            android:layout_marginLeft="10dp"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_sub_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textSize="20dp"
+                android:width="110dp"
+                android:paddingVertical="@dimen/activity_horizontal_margin"
+                android:text="Tam Tinh :"/>
+            <TextView
+                android:id="@+id/result_subtotal"
+                android:layout_marginLeft="140dp"
+                android:paddingRight="10dp"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="235.000d"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/total"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingRight="10dp"
+            android:background="@android:color/holo_blue_bright"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/activity_horizontal_margin"
+                android:paddingLeft="10dp"
+                android:textSize="20dp"
+                android:width="110dp"
+                android:text="Tong Tien :"/>
+            <TextView
+                android:id="@+id/result_total"
+                android:layout_marginLeft="140dp"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="195.000d"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

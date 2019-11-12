@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "840769782497",
+    "firebase_url": "https://wazabakery.firebaseio.com",
+    "project_id": "wazabakery",
+    "storage_bucket": "wazabakery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840769782497:android:3fc8bcc4229d56cb4cada0",
+        "android_client_info": {
+          "package_name": "com.example.hanabakery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840769782497-sal050lgs8bcqd9ialgtfttrrg6l0q53.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hanabakery",
+            "certificate_hash": "b5418138261aafd85379b49c0a04450960479dae"
+          }
+        },
+        {
+          "client_id": "840769782497-snkve6ao1vmp447n2cunme12gn9vmlqg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAg_d_lKFKDdeKvrDf1daVL1w3FioQI2jQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "840769782497-snkve6ao1vmp447n2cunme12gn9vmlqg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
