@@ -3,6 +3,7 @@ package com.example.hanabakery;
 import androidx.activity.ComponentActivity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -12,6 +13,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -39,7 +42,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
     private Button AddNewProductButton;
     private ImageView InputProductImage;
     private EditText InputProductName,InputProductDescription,InputProductPrice;
-    private static final int GalleryPick=1;
+    private static final int GalleryPick = 1;
     private Uri ImageUri;
     private String productRandomKey,downloadImageUrl;
     private StorageReference ProductImagesRef;
@@ -48,21 +51,30 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_add_new_product);
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
+
 
         CategoryName = getIntent().getExtras().get("category").toString();
         ProductImagesRef = FirebaseStorage.getInstance().getReference().child("Product Images");
         ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
 //        Toast.makeText(this, CategoryName, Toast.LENGTH_SHORT).show();
-        AddNewProductButton=(Button)findViewById(R.id.add_new_product);
-        InputProductImage=(ImageView)findViewById(R.id.select_product_image);
-        InputProductName=(EditText)findViewById(R.id.product_name);
-        InputProductDescription=(EditText)findViewById(R.id.product_description);
-        InputProductPrice=(EditText)findViewById(R.id.product_price);
+        AddNewProductButton=findViewById(R.id.add_new_product);
+        InputProductImage=findViewById(R.id.select_product_image);
+        InputProductName=findViewById(R.id.product_name);
+        InputProductDescription=findViewById(R.id.product_description);
+        InputProductPrice=findViewById(R.id.product_price);
         loadingBar = new ProgressDialog(this);
 
-
+        //Gọi mở Gallery
         InputProductImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +82,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                 OpenGallery();
             }
         });
+        //Gọi hàm ValidateProductData
         AddNewProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,11 +102,12 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         startActivityForResult(galleryIntent,GalleryPick);
     }
 
+    //Hàm trả về kết quả
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == GalleryPick && requestCode == RESULT_OK && data!= null)
+        if(requestCode==GalleryPick && resultCode==RESULT_OK && data!=null)
         {
             ImageUri = data.getData();
             InputProductImage.setImageURI(ImageUri);
@@ -136,11 +150,11 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         loadingBar.show();
 
         Calendar calendar=Calendar.getInstance();
-        SimpleDateFormat currentDate= new SimpleDateFormat("MMM dd,yyyy");
+        SimpleDateFormat currentDate= new SimpleDateFormat("yyyy-MM-dd");
         saveCurrentDate=currentDate.format(calendar.getTime());
 
         SimpleDateFormat currentTime= new SimpleDateFormat("HH:mm:ss a");
-        saveCurrentTime=currentDate.format(calendar.getTime());
+        saveCurrentTime=currentTime.format(calendar.getTime());
 
         productRandomKey = saveCurrentDate + saveCurrentTime;
 
